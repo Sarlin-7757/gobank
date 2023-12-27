@@ -1,5 +1,43 @@
+# GoBank API Server
 
-#GoBank API Server
+GoBank is a powerful API server built with Golang, designed to provide seamless and secure banking functionalities. This project allows users to perform various operations, including creating and deleting user accounts, as well as securely transferring money. The authentication mechanism is reinforced with JSON Web Tokens (JWT) for robust security.
 
-GoBank is a robust API server built on Golang, providing essential banking functionalities through a secure and efficient platform. This project enables users to perform various operations such as creating and deleting user accounts, as well as facilitating secure money transfers. The authentication system is fortified with JSON Web Tokens (JWT), ensuring a reliable and protected environment. With a focus on simplicity and performance, GoBank serves as a versatile foundation for financial applications, offering a seamless integration of Golang's strengths into the world of modern banking APIs.
+## Features
+
+- **User Management:**
+  - Create and delete user accounts.
+- **Transaction Handling:**
+  - Secure money transfer functionality.
+- **Authentication:**
+  - JWT-based authentication for enhanced security.
+
+## Technologies Used
+
+- **Golang (Go):**
+  - A statically typed language known for its simplicity and efficiency, perfectly suited for building robust APIs.
+- **JWT (JSON Web Tokens):**
+  - Used for secure user authentication and authorization.
+- **Git:**
+  - Version control system for tracking changes and collaborating with a team.
+- **GitHub:**
+  - Hosting platform for version control and collaboration.
+- **RESTful API:**
+  - Utilized for a stateless communication between clients and the server.
+
+## Getting Started
+
+### Prerequisites
+
+- Install Golang: [Golang Installation Guide](https://golang.org/doc/install)
+- Set up your GitHub repository.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/GoBank.git
+   cd GoBank
+
+### Contribution
+Feel free to contribute to the development of GoBank.
 
