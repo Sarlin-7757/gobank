@@ -35,9 +35,13 @@ GoBank is a powerful API server built with Golang, designed to provide seamless 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/GoBank.git
+   git clone https://github.com/Sarlin-7757/GoBank.git
    cd GoBank
-
+   
+2. Run the file:
+   ```bash
+   make run
+   
 ## Contribution
 Feel free to contribute to the development of GoBank.
 
