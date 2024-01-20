@@ -42,9 +42,10 @@ func (s *PostgressStore) init() error {
 func (s *PostgressStore) CreateAccountTable() error {
 	query := `create table if not exists account(
 		id serial primary key ,
-		first_name  varchar(50),
-		last_name varchar(50),
-		number serial ,
+		first_name  varchar(100),
+		last_name varchar(100),
+		number serial,
+		encrypted_password varchar(100),
 		balance serial,
 		created_at timestamp
 	)`
@@ -54,14 +55,15 @@ func (s *PostgressStore) CreateAccountTable() error {
 
 func (s *PostgressStore) CreateAccount(acc *Account) error {
 	query := `insert into account 
-	(first_name , last_name , number , balance, created_at)
-	values ($1 , $2 , $3 , $4 , $5)`
+	(first_name , last_name , number ,encrypted_password , balance, created_at)
+	values ($1 , $2 , $3 , $4 , $5 , $6)`
 
 	_, err := s.db.Query(
 		query,
 		acc.FirstName,
 		acc.LastName,
 		acc.Number,
+		acc.EncryptedPassword,
 		acc.Balance,
 		acc.CreatedAt)
 
@@ -108,6 +110,8 @@ func (s *PostgressStore) GetAccounts() ([]*Account, error) {
 		return nil, err
 	}
 
+	// defer rows.Close()
+
 	accounts := []*Account{}
 	for rows.Next() {
 		account, err := scanIntoAccount(rows)
@@ -128,6 +132,7 @@ func scanIntoAccount(rows *sql.Rows) (*Account, error) {
 		&account.FirstName,
 		&account.LastName,
 		&account.Number,
+		&account.EncryptedPassword,
 		&account.Balance,
 		&account.CreatedAt)
 
