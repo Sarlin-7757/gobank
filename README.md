@@ -28,7 +28,7 @@ GoBank is a powerful API server built with Golang, designed to provide seamless 
 
 ### Prerequisites
 
-- Install Golang: [Golang Installation Guide](https://golang.org/doc/install)
+- Install Golang: [Golang Installation Guide](https://golang.org/doc/install)   
 - Set up your GitHub repository.
 
 ### Installation
@@ -41,7 +41,15 @@ GoBank is a powerful API server built with Golang, designed to provide seamless 
 2. Run the file:
    ```bash
    make run
-   
+
+3. Seed the accoutn 
+    ```bash
+    make 
+    ./bin/gobank --seed 
+
+4. Test 
+    ```bash
+    go test ./... -v
 ## Contribution
 Feel free to contribute to the development of GoBank.
 
